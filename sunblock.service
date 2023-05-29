@@ -1,0 +1,19 @@
+# Move this file to /lib/systemd/system/sunblock.service 
+# systemctl start sunblock to start it 
+# systemctl enable sunblock to enable it 
+
+[Unit]
+Description=Block delivering electricity if electricity prices are negative
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=30
+User=root
+KillMode=process
+ExecStart=/usr/bin/env python3 /usr/local/sbin/sunblock.py
+
+[Install]
+WantedBy=multi-user.target

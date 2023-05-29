@@ -1,0 +1,9 @@
+#!/bin/bash
+cp sunblock.py  /usr/local/sbin/sunblock.py
+cp sunblock.service /lib/systemd/system/sunblock.service 
+chmod -x  /lib/systemd/system/sunblock.service
+systemctl enable  sunblock # enable it 
+systemctl start   sunblock #  start it 
+systemctl status sunblock 
+
+
