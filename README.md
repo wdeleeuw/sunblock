@@ -12,11 +12,23 @@ cd sunblock
 sudo install
 ```
 
+
 Controleren of het werkt: 
 
 ```
 systemctl status sunblock 
 ```
+
+Eenmaal geinstalleerd wordt de service automatisch gestart als de Pi opnieuw wordt opgestart.  Uitzeteen van de service: 
+```
+   systemctl stop sunblock 
+``` 
+ stop de service.  
+```
+   systemctl disable sunblock  
+```
+ niet opnieuw opstarten bij opstarten systeem  
+
 
 signal pin is pin 8 (board)/14(BCM) 
  *  laag : energieprijs is positief
