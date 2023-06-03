@@ -39,7 +39,7 @@ def UpdateTable(pr) :
    while i >=0  and  datetime.strptime(pr[i]["Timestamp"],'%Y-%m-%dT%H:%M:%S+00:00') > datetime.utcnow():
      i=i-1
    pr = pr[slice(i,len(pr),1)]
-   if len(pr) < 24 and datetime.now().strftime("%H") > '15' :
+   if len(pr) < 12 and datetime.now().strftime("%H") > '15' :
        pr=pr+GetInfo(date.today()+timedelta(days=1))
    logger.info("sunblock [info] Time = "+pr[0]["Timestamp"]+" (UTC) Tariff = "+str(pr[0]["TariffReturn"])+" data for "+str(len(pr))+" hour")
    return pr
