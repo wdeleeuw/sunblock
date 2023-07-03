@@ -30,3 +30,9 @@ Uitzeteen van de service
 signal pin is pin 8 (board)/14(BCM) 
  *  laag : energieprijs is positief
  *  high : energieprijs is negatief
+
+Logging is to /var/log/daemon.log.   To check what the progam did you can use 
+
+```
+  sudo grep sunblock  /var/log/daemon.log
+```
